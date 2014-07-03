@@ -1,0 +1,135 @@
+﻿@model online_quiz.Models.Student
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@*<html>
+    <head>
+        <title></title>
+         <script src="~/Scripts/jquery.validate.js"></script>*@
+         
+         @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#bt1').click(function () {
+
+                var userName = $('#Name').val();
+
+                
+                $('#checking').show();
+              
+                $.getJSON("/Home/checkAvailability?Name=" + userName, function (data) {
+                    
+                    $('#checking').hide();
+                    if (data == true) {
+                        alert('User Name =' + userName);
+                        $('#result').text("User already exists in database");
+                    }
+                    else {
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+        <script>
+            $(document).ready(function () {
+
+                $('#b1').click(function validate() {
+                    var a = document.getElementById("nf");
+                    var b = document.getElementById("nl");
+                    var c = document.getElementById("p");
+                    var d = document.getElementById("cp");
+                    if (a.value == null)
+                        a.innerHTML = "Enter First name";
+                    if (b.value == null)
+                        b.innerHTML = "Enter Last Name";
+                    if (c.value == null)
+                        c.innerHTML = "Enter password";
+                    if (d.value == null)
+                        d.innerHTML = "Enter password";
+                });
+
+            });
+
+        </script>
+ 
+   <body>
+        <style>
+           body {
+                background-color:aquamarine
+            }
+        </style>
+       
+     <div class="col-md-4"></div>
+        <span class="label-default" style="font-size:xx-large;background-color:aquamarine;color:black;color:white">Sign Up</span><br />
+        <br />
+       @using (Html.BeginForm("SignIn", "Home", FormMethod.Post))
+       {
+             <div class="form-group">
+                    <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                    <div class="input-group input-group-xs">
+                        <div id="result"></div>
+                        <div id="checking">Checking...</div>
+                        @Html.AntiForgeryToken()
+                         @Html.ValidationSummary(true)  
+                         @Html.TextBoxFor(p => p.Name, new {id="Name",@class="form-control",placeholder="FirstName"})
+                         @Html.ValidationMessageFor(p=>p.Name)
+                         <input type="button" id="bt1" class="form-control" value="check" name="bt1" style="height:30px;width:60px;background-color:royalblue;color:white" ><br /><br/>
+                         @Html.PasswordFor(p1 => p1.Password, new {id="p",name="password",@class="form-control",placeholder="Password" })<br /><br /><br />
+                         @Html.ValidationMessageFor(p1=>p1.Password)<br />
+                        @Html.PasswordFor(p2=>p2.Password,new { id="p1",Name="Cpassword",@class="form-control",placeholder="Confirm Password"})
+                     
+                        <br /><br /><br/>
+                         <input type="submit" id="b1" value="Sign up" style="height:35px;width:300px;color:white;background-color:royalblue" /></div>
+                     </div>
+                        <div class="col-md-4">
+                            <img src="~/images/pic6.jpg"  style=" background-color:mediumaquamarine;height:300px;width:300px;background:wheat" />
+
+                         </div>
+                      </div>
+                          
+                    </div>
+           
+       }
+    @* <form  method="post" action="/Home/Add">
+                <div class="form-group">
+                    <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                    <div class="input-group input-group-xs">
+                        <div id="result"></div>
+                        <div id="checking">Checking...</div>
+                        <input type="text" id="Name" class="form-control" name="Name" required="required" placeholder="FirstName"></>
+                        
+                         <input type="button" id="bt1" class="form-control" value="check" name="bt1" style="height:30px;width:60px;background-color:royalblue;color:white" ><br /><br /><br />
+                         <input type="text" id="nl" class="form-control" name="lastname" required="required" placeholder="LastName"><br /><br /><br />
+                         <input type="password" id="p"  class="form-control" name="password" required="required" placeholder="Password"><br /><br /><br />
+                         <input type="password" id="cp" class="form-control" name="Password" required="required"  placeholder="Confirm Password"><br /><br /><br />
+                         <div class="col-md-5"></div>
+                         <input type="submit" id="b1" value="Sign up" style="height:35px;width:150px;color:white;background-color:royalblue" /></div>
+            
+                     </div>
+                        <div class="col-md-4">
+                            <img src="~/images/pic6.jpg"  style=" background-color:mediumaquamarine;height:300px;width:300px;background:wheat" />
+
+                         </div>
+                      </div>
+                          
+                    </div>
+       
+         </form>   *@ 
+       </body>     
+                 
+   
+

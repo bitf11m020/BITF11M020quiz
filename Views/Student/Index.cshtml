@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "~/Views/Shared/_layout4.cshtml";
+}
+
+<!DOCTYPE html>
+
+@*<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>*@
+    <div>
+     
+           <style>
+            body
+            {
+                background-color:aquamarine
+            }
+            </style>
+        <br /><br /><br /><br />
+           <div class="row">
+               <div class="col-md-1"></div>
+            <div class="col-md-6">
+                 <span class="labet" style="font-size:xx-large;color:white">Books related to Subjects</span></> <br />
+                  <p>Programing Fundamentals By Tony Gadius<br />
+                      3rd Edition<br /></><img src="~/images/pic14.jpeg " style="height:50px;width:50px" />
+                  </p>
+                <p>Data Structures and Algorithms by SEYMOURED LIPSCHUTZ<br />
+                      3rd Edition<br /></><img src="~/images/pic15.jpg " style="height:50px;width:50px" />
+                  </p>
+                <p>ADO.Net<br />
+                      2rd Edition<br /></><img src="~/images/pic13.jpg " style="height:50px;width:50px" />
+                  </p>
+
+            </div>
+               <div class="col-md-4"></div>
+               <div class="col-md-4">
+            <form method="post" action="Student/SelectQuiz">
+                 <span class="labet" style="font-size:xx-large ;color:white">Student Panel</span></> <br />
+                   <div class="btn-group">
+                   <button type="Submit" id="b1"name="Select" value="pf" class="btn btn-default" style="color:white;height:60px;width:300px;background-color:mediumaquamarine">Programing Fandamentals</button><br />
+                  <!--  <span class="labet" style="font-size:xx-large">Profile</span></> -->
+                   <button type="Submit" id="b2" name="Select" value="DSA" class="btn btn-default" style="color:white;height:60px;width:300px;background-color:mediumaquamarine" >DataBase Structures</button><br />
+                 <!--   <span class="labet" style="font-size:xx-large">Reports</span></>-->
+                   <button type="Submit" id="b3" name="Select" value="EAD" class="btn btn-default" style="color:white;height:60px;width:300px;background-color:mediumaquamarine" >EAD</button><br />
+                
+                       
+                       </div>
+             </form>
+               </div>
+    </div>
+        </div>
+

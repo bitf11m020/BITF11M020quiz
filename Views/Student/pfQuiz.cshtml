@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_layout4.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+<style>
+    body
+    {
+        background-color:aquamarine
+    }
+</style>
+    <div>
+      @using(Html.BeginForm("Result","Student",FormMethod.Post))
+      {
+        <div class="row">
+
+             <div class="col-md-1"></div>
+             <div class="col-md-10">
+      
+     
+      @foreach (var m in Model)
+      {
+      
+             <p>@m.Question</p>
+        
+            <div class="btn-group" >
+            <input type="radio" name="@m.CrtOpt" value="@m.opt1"/>@m.opt1
+             <input type="radio" name="@m.CrtOpt" value="@m.opt2"/>@m.opt2
+             <input type="radio" name="@m.CrtOpt" value="@m.opt3"/>@m.opt3
+             <input type="radio" name="@m.CrtOpt" value="@m.opt4"/>@m.opt4
+        
+          </div>
+          
+      }
+      
+      </div>
+      
+            </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <input type="submit" style="background-color:#0361A8;color:white" value="Result" />
+               
+            </div>
+        </div>
+      }
+        <br />
+                <br />
+      
+    </div>
+
+

@@ -1,0 +1,46 @@
+﻿@model online_quiz.Models.Quize
+
+@{
+    Layout = "~/Views/Shared/_layout4.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+
+    <style>
+        body
+        {
+            background-color:aquamarine
+        }
+    </style>
+   
+    <div>
+         <div class="row">
+        <div class="col-md-4" ></div>
+         <div class="col-md-4" >
+         @Html.Label("Update Quiz")
+        @using(Html.BeginForm("Update","Teacher","@id",FormMethod.Post))
+        {
+            @Html.TextBoxFor(q => q.Id, new { Id="id"})<br /><br />
+        @Html.TextAreaFor(q => q.Question, new {Name="Question",value=@Model.Question ,placeholder="Question",style="height:100px;width:400px" })<br /><br /><br />
+            
+        @Html.TextBoxFor(o=>o.opt1, new {Name="opt1",value=@Model.opt1,  placeholder="Option A"})< &nbsp &nbsp/>
+        @Html.TextBoxFor(o=>o.opt2, new {Name="opt2",value=@Model.opt2, placeholder="Option B"})<br /><br />
+        @Html.TextBoxFor(o=>o.opt3, new {Name="opt3",value=@Model.opt3, placeholder="Option C"})<&nbsp &nbsp/>
+        @Html.TextBoxFor(o=>o.opt4, new {Name="opt4",value=@Model.opt4, placeholder="Option D"})<br /><br />
+        @Html.TextBoxFor(o=>o.CrtOpt, new {Name="CrtOpt",value=@Model.CrtOpt, placeholder="Correct option"})<&nbsp &nbsp/>
+        <select name="type">
+            <option id="op1"  value="PF">PF</option>
+              <option id="op2"  value="DSA">DSA</option>
+              <option id="op3"  value="EAD">EAD</option>
+        </select>
+          
+         <br />   
+        <input type="submit" value="Update" style="height:30px;width:150px" />}
+                          
+            </div>
+             </div>
+    </div>
+        
+

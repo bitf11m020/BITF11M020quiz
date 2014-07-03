@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_layout4.cshtml";
+}
+
+<!DOCTYPE html>
+
+@*<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Content/jquery-ui-1.8.24.js"></script>
+    <title>index</title>
+</head>
+<body>*@
+    <div>
+        <style>
+            body
+            {
+                background-color:aquamarine
+            }
+            </style>
+        <br />
+           <div class="row">
+               <div class="col-md-1"></div>
+               <div class="col-md-3">
+                 <h3>Teacher Can Do Following</h3><br />
+                   <h4>Quiz Management</h4><br />
+                   <p>1.Teacher can Add quiz</p><br />
+                    <p>2.Teacher can Remove quiz</p><br />
+                    <p>3.Teacher can Update quiz</p><br />
+                    <p>4.Teacher can View quiz</p><br />
+                   
+                   
+
+               </div>
+            <div class="col-md-4"></div>
+               <div class="col-md-4">
+                    <span class="labet" style="font-size:xx-large ;color:white">Teacher Panel</span></> <br />
+                   <form method="post" action="/Teacher/mng">
+                       <div class="btn-group">
+                 <!--  <span class="labet" style="font-size:xx-large">Quiz Managment</span></> -->
+                   <button type="submit" value="mng" name="mng" id="b1"  class="btn btn-default" style="height:80px;width:200px;background-color:mediumaquamarine" >Quiz Managment</button><br />
+                  <!--  <span class="labet" style="font-size:xx-large">Profile</span></> -->
+                 
+                 </div>
+                       </form>
+               </div>
+           </div>
+
+
+        
+    </div>
+   
+

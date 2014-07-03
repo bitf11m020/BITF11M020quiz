@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout6.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>mng</title>
+      @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#btnn').click(function () {
+
+                var Quest = $('#t1').val();
+
+
+                $('#checking').show();
+
+                $.getJSON("/Teacher/search?Name=" + Quest, function (data) {
+
+                    $('#checking').hide();
+                    if (data == true) {
+                       
+                        $('#result').text("Question exist");
+                    }
+                    else {
+                        $('#result').text("Question not exist");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+
+    
+<body>
+    <div>
+          <style>
+            body
+            {
+                background-color:aquamarine
+            }
+            </style>
+        <br /><br /><br /><br />
+           <div class="row">
+               <div class="col-md-1"></div>
+               <div class="col-md-3">
+                   <img src="~/images/pic9.png" />
+               </div>
+            <div class="col-md-4"></div>
+               <div class="col-md-4">
+                   
+                   <form method="post" action="/Teacher/quizmng">
+                    <div class="btn-group">
+                  <span class="labet" style="font-size:xx-large; color:white">Quiz Managment</span><br />
+                   <button type="submit" id="b1" name="Add" value="Add" class="btn btn-default" style="height:50px;width:200px;color:white;background-color:mediumaquamarine" >ADD Quiz</button><br />
+                  <!--  <span class="labet" style="font-size:xx-large">Profile</span></> -->
+                   <button type="submit" id="b2" name="Add" value="Update" class="btn btn-default" style="height:50px;width:200px;color:white;background-color:mediumaquamarine" >Update Quiz</button><br />
+                 <!--   <span class="labet" style="font-size:xx-large">Reports</span></>-->
+                   <button type="submit" id="b3"name="Add"  value="Delete" class="btn btn-default" style="height:50px;width:200px;color:white;background-color:mediumaquamarine" >Delete Quiz</button><br />
+                   <button type="submit" id="b4" name="Add" value="View" class="btn btn-default" style="height:50px;width:200px;color:white;background-color:mediumaquamarine" >View  Quiz</button><br />
+                        </div>
+               </form>
+    </div>
+               </div>
+        </div>
+
+

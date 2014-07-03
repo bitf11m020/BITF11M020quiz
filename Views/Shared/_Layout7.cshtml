@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+     <div>
+        <nav class="navbar navbar-inverse" style="background-color:black"  role="navigation">
+        <div class="navbar-header">
+          <h1> <a class="navbar-brand" href="#">Online Quiz</a></h1> </div>
+              <div>
+            <ul class="nav nav-pills pull-right fix-bottom">
+                <li class="active"><a href="/Home/SignIn" >SignIN</a></li>
+             <li class="active" ><a href="/Home/index">Home</a></li>
+              <li><a href="#">About</a></li>
+            
+</ul>
+                </div>
+            </nav>
+        </div>
+        
+    
+    @RenderBody()
+     <div>
+        <nav class="navbar navbar-inverse navbar-fixed-bottom " style="background-color:black"  role="banner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a></div>
+              <div>
+            <ul class="nav navbar-nav push-buttom" >
+           <li class="active"> <a href="/Home/Login"></a></li>
+                  </ul>
+                </div>
+            </nav>
+        </div>
+    
+  
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>_layout4</title>
+</head>
+<body>
+    <div>
+          <div>
+        <nav class="navbar navbar-inverse " style="background-color:black" role="navigation">
+        <div class="navbar-header">
+          <h1> <a class="navbar-brand" href="#">Online Quiz</a></h1> </div>
+            <ul class="nav nav-pills pull-right fix-bottom">
+          <li> <form class="navbar-form " role="search" action="/Teacher/search">
+                <div class="form-group">
+                    
+                 <input type="text" id="t1" name="Name" class="form-control" placeholder="Search">
+                 </div>
+             <button type="button" id="btnn" class="btn btn-default">Submit</button>
+              <div id="checking" style="background-color:white">Checking...</div>
+                    <div id="result" style="color:red"></div>
+                </form></li>
+              
+             <li class="active" ><a href="/Home/index">LogOut</a></li></ul>
+           
+                
+            </nav>
+        </div>
+        
+    
+    @RenderBody()
+     <div>
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" style="background-color:black" role="banner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a></div>
+              <div>
+           
+                </div>
+            </nav>
+        </div>
+        
+    </div>
+</body>
+</html>

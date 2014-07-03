@@ -1,0 +1,56 @@
+﻿@model online_quiz.Models.Quize
+
+@{
+    Layout = "~/Views/Shared/_layout4.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+    <style>
+        body
+        {
+            background-color:aquamarine
+        }
+    </style>
+    <div>
+        <div class="row">
+        <div class="col-md-4" ></div>
+         <div class="col-md-4" >
+         @Html.Label("ADD Quiz")
+        @using(Html.BeginForm("AddQuiz","Teacher",FormMethod.Post))
+        {
+        @Html.TextAreaFor(q => q.Question, new {Name="Question", placeholder="Question",style="height:100px;width:400px"})<br /><br /><br />
+            
+        @Html.TextBoxFor(o=>o.opt1, new {Name="opt1", placeholder="Option A"})< &nbsp &nbsp/>
+        @Html.TextBoxFor(o=>o.opt2, new {Name="opt2",placeholder="Option B"})<br /><br />
+        @Html.TextBoxFor(o=>o.opt3, new {Name="opt3",placeholder="Option C"})<&nbsp &nbsp/>
+        @Html.TextBoxFor(o=>o.opt4, new {Name="opt4",placeholder="Option D"})<br /><br />
+        @Html.TextBoxFor(o=>o.CrtOpt, new {Name="CrtOpt",placeholder="Correct option"})<&nbsp &nbsp/>
+        <select name="type">
+            <option id="op1"  value="PF">PF</option>
+              <option id="op2"  value="DSA">DSA</option>
+              <option id="op3"  value="EAD">EAD</option>
+        </select>
+          
+         <br />   
+        <input type="submit" value="ADD" style="height:30px;width:150px" />}
+             @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
+             {
+                <input type="file" name="uploadfile" />
+                 <input type="submit" value="Upload" />
+             }
+             @using (Html.BeginForm("addtoDB", "Teacher", FormMethod.Post))
+             {
+                 <input type="submit" value="AddToDB" />
+             }
+          
+       
+</div>
+           
+               
+            </div>
+
+        
+    </div>
+       

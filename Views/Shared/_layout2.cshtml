@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_layout2</title>
+  <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div>
+          
+           <div class="row">
+           <div class="col-md-1"></div>
+           <ul class="nav nav-tabs" style="background-color:orange">
+           <li class="active"><a href="/Teacher/index">Home</a></li>
+           <li><a href="#">About</a></li>
+           
+            </ul>
+              </div>
+      
+        @RenderBody();
+        
+    </div>
+</body>
+</html>

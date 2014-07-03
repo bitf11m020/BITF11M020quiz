@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <title>_layout5</title>
+</head>
+<body>
+    <div>
+          <div>
+        <nav class="navbar navbar-inverse " style="background-color:black" role="navigation">
+        <div class="navbar-header">
+          <h1> <a class="navbar-brand" href="#">Online Quiz</a></h1> </div>
+              <div>
+              <ul class="nav nav-pills pull-right fix-bottom">
+             <li class="active" ><a href="/Home/index" style="height:40px;width:100px">LogOut</a></li>
+                   <li class="active" ><a href="/Teacher/mng1" style="height:40px;width:100px">Back</a></li>
+                 
+              </ul>
+           
+                </div>
+            </nav>
+        </div>
+        
+    
+    @RenderBody()
+     <div>
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" style="background-color:black" role="banner">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a></div>
+              <div>
+           
+                </div>
+            </nav>
+        </div>
+        
+    </div>
+        
+  
+</body>
+</html>
