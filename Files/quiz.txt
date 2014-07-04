@@ -1,0 +1,8 @@
+Which of these is the worst case time complexity of Quick Sort - and cannot be expressed in lower order terms,O(n),O(nlogn),O(n^2),O(n^3),O(n),DSA
+Which of these is the worst case time complexity of Merge Sort - and cannot be expressed in lower order terms,O(n),O(n log n) ,O(n2) ,O(n3),O(n log n),DSA
+Which of these is the average case time complexity of Merge Sort - and cannot be expressed in lower order terms,O(n) ,O(n log n),O(n2),O(n3) ,O(n2),DSA
+Which of these is the time complexity involved in building a heap of n elements - and cannot be expressed in lower order terms,O(n) ,O(n log n),O(n2),O(n3) ,O(n3),DSA
+A heap is a particular kind of a binary search tree. This statement is,True, False,both,none,True,DSA
+
+
+ 
